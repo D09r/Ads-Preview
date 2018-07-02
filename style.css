@@ -1,0 +1,81 @@
+#adPrevPlatLink {
+	width: 20em;
+	height: 1.6em;
+  	transition: width .3s ease-out;
+}
+
+#adPrevPlatLink:focus {
+  	width: 40em;
+}
+
+#isOnline {
+/*	display: none;*/
+  left: 0px;
+  top: 0px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  font: 1em sans-serif;
+  color: #2d2929;
+  padding: 0.1em;
+}
+
+.online {
+/*  background: green;*/
+	color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.offline {
+/*  background: red;*/
+  	color: #721c24;
+  	background-color: #f8d7da;
+	border-color: #f5c6cb;
+}
+
+textarea {
+	max-width: 145px;
+	height: 1.9em;
+  	transition: height .3s ease-out;
+}
+
+textarea:focus {
+  height: 40em;
+}
+
+iframe {
+	width: 310px;
+	height: 310px;
+  	overflow: hidden;
+}
+
+#crTable a {
+	font-weight: 400;
+}
+
+#crTable i {
+	cursor: pointer;
+}
+
+.file-code {
+	height: 100%;
+	background-image: url('icons/file-code.svg') no-repeat center bottom;
+	background-size:100% 100%;
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size:cover;
+}
+
+#srcCodeViewerDiv .modal {
+	left: 35%;
+	width: 70%;
+}
+
+#srcCodeViewerDiv .modal-body {
+	max-height: 525px;
+}
+
+.svg_code {
+	margin-bottom: 0.3em;
+}

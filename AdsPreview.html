@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>Ads Preview</title>
+	<link href="style.css" rel="stylesheet">
+    <link href="lib/bootstrap.min.css" rel="stylesheet">
+	<link href="lib/bootstrap-responsive.min.css" rel="stylesheet">
+</head>
+<body>
+	<div id="isOnline"></div>
+	<div class="container-fluid" style="margin-top: 10px">
+		<div class="row-fluid">
+        	<div class="span2">
+				<div class="well sidebar-nav">
+					<div id="logo">
+						<h3><img src="icons/ad-64.png" /></h3>
+					</div>
+					<hr>
+					<div>
+						<h4>Platforms</h4>
+						<form id="platform">
+							<div class="radio">
+								<label><input type="radio" name="platforms" value="#" data-id="default" checked> default</label>
+							</div>
+					  	</form>
+					</div>
+					<div>
+						<h4>Ad IDs</h4>
+						<textarea id="inputsCr" type="text" required placeholder="Enter the creative IDs (should be separated by line)"></textarea>
+					</div>
+					<div>
+						<button id="loadCr" class="btn btn-primary btn-medium" type="button">Preview</button>
+					</div>
+					<div id="totalCr"></div>
+          		</div><!--/.well -->
+        	</div><!--/span-->
+			<div class="span10">
+				<div class="hero-unit" id="billboard">
+					<div class="container" id="addPlatform">
+						<div class="row">
+							<span style="font-weight: 500">Ad Platform Name &#38; Preview Link</span>
+						</div>
+						<hr>
+						<div class="row">
+							<input id="adPrevPlatName" type="text" placeholder="Enter the platform name.." required style="width: 20em"><br>
+							<input id="adPrevPlatLink" type="url" placeholder="Enter the ad preview link.." required>
+						</div>
+						<div class="row">
+							<button id="adPrevLink" class="btn btn-primary btn-medium" type="button">Save</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<footer>
+			<p class="pull-right" style="color:#afafaf;marign-bottom:6px">Hey! I'd like to hear your <a href="https://chrome.google.com/webstore/detail/recon-ip-network-tools/lpfpoenklfncdgminmpdoomkbjaiolod/reviews" target="_blank" class="font-italic">feedback!</a></p>
+		</footer>
+	</div>
+	<div id="srcCodeViewerDiv"></div>
+	<!-- Modal srcCode -->
+		<div class="modal fade" id="modalAddPlatform" tabindex="-1" role="dialog" aria-labelledby="modalAddPlatformLabel" aria-hidden="true" style="display: none">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h4 class="modal-title" id="modalAddPlatformLabel">Platform added sucessfully!</h4>
+			  </div>
+			  <div class="modal-body">
+				  <p>Please, reload the page and start previewing the Ad.</p>
+			  </div>
+			  <div class="modal-footer">
+				<button id="dismissModal" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	
+	<div id="runtime"></div>
+	<script src="lib/jquery-3.3.1.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<script src="lib/syntaxHighlighter.js"></script>
+    <script src="lib/syntaxHighlighter-extra.js"></script>
+	<script src="lib/ads.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
