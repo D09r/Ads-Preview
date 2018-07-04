@@ -35,13 +35,26 @@
 }
 
 textarea {
-	max-width: 145px;
+	max-width: 125px;
 	height: 1.9em;
   	transition: height .3s ease-out;
 }
 
 textarea:focus {
   height: 40em;
+}
+
+#html_input {
+	max-width: 60em;
+	width: 30em;
+	height: 1.9em;
+  	transition: height .3s ease-out;
+	transition: width .3s ease-out;
+}
+
+#html_input:focus {
+  	height: 30em;
+	width: 50em;
 }
 
 iframe {
@@ -78,4 +91,9 @@ iframe {
 
 .svg_code {
 	margin-bottom: 0.3em;
+}
+
+@media (min-width: 1200px)
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    /* width: 1170px; */
 }

@@ -2,7 +2,7 @@
 * * Hey!! p1ngm3 @d09r
 *
 * * Ads Preview
-* * Version 0.0.6
+* * Version 0.0.7
 * * Author: Dinesh Kumar
 * * https://www.linkedin.com/in/hack3r
 * * Repository: https://github.com/d09r
@@ -60,19 +60,19 @@ function updateOnlineStatus(event) {
 		isOnline.text("Back " + condition.toUpperCase());
 		setTimeout(function(){ 
                     $('#isOnline').css('display','none');
-                }, 3000);
+                }, 6000);
 	} else {
 		isOnline.css('display','block');
 		isOnline.removeClass('online');
 		isOnline.addClass('offline');
-		isOnline.text(condition.toUpperCase() + ": There is no Internet connection");
+		isOnline.text(condition.toUpperCase() + "! There is no Internet connection");
 	}
 	console.log(condition);
 }
 
 $(document).ready(function() {
 	var isOnline = $('#isOnline');
-	window.addEventListener('online',  updateOnlineStatus);
+	window.addEventListener('online', updateOnlineStatus);
 	window.addEventListener('offline', updateOnlineStatus);
 	
 	var platforms = {};
@@ -186,6 +186,8 @@ $(document).ready(function() {
 		updateAdBlockStatus('adBlock');
 	} else {
 //		updateAdBlockStatus('noAdBlock');
+		
+//		$.ajax({url: "/js/ads.js", type: 'GET'});
 	}
 		
 	document.addEventListener('contextmenu', event => event.preventDefault());

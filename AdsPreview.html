@@ -6,6 +6,8 @@
 	<link href="style.css" rel="stylesheet">
     <link href="lib/bootstrap.min.css" rel="stylesheet">
 	<link href="lib/bootstrap-responsive.min.css" rel="stylesheet">
+	<script src="js/crWinClose.js"></script>
+	<script src="js/ads.js" type="text/javascript"></script>
 </head>
 <body>
 	<div id="isOnline"></div>
@@ -14,7 +16,7 @@
         	<div class="span2">
 				<div class="well sidebar-nav">
 					<div id="logo">
-						<h3><img src="icons/ad-64.png" /></h3>
+						<h3><a href="https://chrome.google.com/webstore/search/codevoid?_category=extensions" target="_blank"><img src="icons/ad-64.png" /></a></h3>
 					</div>
 					<hr>
 					<div>
@@ -30,14 +32,14 @@
 						<textarea id="inputsCr" type="text" required placeholder="Enter the creative IDs (should be separated by line)"></textarea>
 					</div>
 					<div>
-						<button id="loadCr" class="btn btn-primary btn-medium" type="button">Preview</button>
+						<button id="loadCr" class="btn btn-primary btn-medium" type="button">Ads Preview</button>
 					</div>
 					<div id="totalCr"></div>
           		</div><!--/.well -->
         	</div><!--/span-->
 			<div class="span10">
 				<div class="hero-unit" id="billboard">
-					<div class="container" id="addPlatform">
+					<div class="container1" id="addPlatform">
 						<div class="row">
 							<span style="font-weight: 500">Ad Platform Name &#38; Preview Link</span>
 						</div>
@@ -55,7 +57,7 @@
 		</div>
 		<hr>
 		<footer>
-			<p class="pull-right" style="color:#afafaf;marign-bottom:6px">Hey! I'd like to hear your <a href="https://chrome.google.com/webstore/detail/recon-ip-network-tools/lpfpoenklfncdgminmpdoomkbjaiolod/reviews" target="_blank" class="font-italic">feedback!</a></p>
+			<p class="pull-right" style="color:#afafaf;marign-bottom:6px">Hey! I'd like to hear your <a href="https://chrome.google.com/webstore/detail/ads-preview/moclhmphpefaimgfcdgecdbbhnelafoj/reviews" target="_blank" class="font-italic">feedback!</a> | <span>Do you wanna collaborate? </span><a href="https://github.com/d09r?tab=repositories" target="_blank">Ads Preview v0.0.7</a> | <a href="https://chrome.google.com/webstore/search/d09r?_category=extensions" target="_blank">Chrome Web Store</a> | <a href="https://addons.mozilla.org/en-US/firefox/user/D09r/" target="_blank">Firefox Add-ons</a> | #d09r </p>
 		</footer>
 	</div>
 	<div id="srcCodeViewerDiv"></div>
@@ -81,7 +83,6 @@
 	<script src="lib/bootstrap.min.js"></script>
 	<script src="lib/syntaxHighlighter.js"></script>
     <script src="lib/syntaxHighlighter-extra.js"></script>
-	<script src="lib/ads.js"></script>
-	<script src="script.js"></script>
+	<script src="js/cr.js"></script>
 </body>
 </html>

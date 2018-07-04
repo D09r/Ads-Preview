@@ -2,11 +2,11 @@
 	"update_url": "https://clients2.google.com/service/update2/crx",
 	"manifest_version": 2,
 	"name": "Ads Preview",
-	"description": "Ads Preview extension for Chrome & Firefox helps to preview multiple creatives (Ads), detects AdBlocker and trace HTTP headers",
-	"version": "0.0.3",
+	"description": "Ads Preview extension for Chrome & Firefox helps to preview multiple creatives (Ads), IAB's Safeframe and trace Ad HTTP headers",
+	"version": "0.0.7",
 	"short_name": "Ads Preview",
     "author": "D09r",
-    "homepage_url": "https://addons.mozilla.org/en-US/firefox/user/D09r/",
+    "homepage_url": "https://chrome.google.com/webstore/search/d09r?_category=extensions",
 	"icons": {
 		"16": "icons/ad-16.png",
         "32": "icons/ad-32.png",
@@ -16,16 +16,15 @@
   	"permissions": [
 		"tabs",
 		"storage",
-        "background",
+		"background",
         "<all_urls>"
   	],
 	"background": {
-        "scripts": ["background.js"],
-        "persistent": true
+        "scripts": ["js/background.js"],
+		"persistent": false
     },
-    "options_page": "AdsPreview.html",
 	"browser_action": {
         "default_icon": "icons/ad-16.png",
-        "default_title": "Ads Preview"
+        "default_title": "Ads Preview and render Ad tag using IAB's Safeframe"
     }
 }
