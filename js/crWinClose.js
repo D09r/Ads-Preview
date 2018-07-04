@@ -1,0 +1,1 @@
+var isCrWinClose=true; //ad checking..
