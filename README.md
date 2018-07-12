@@ -36,6 +36,14 @@ For Firefox (Web & Android): https://addons.mozilla.org/en-US/firefox/addon/ads-
 
 ### Changelog:
 
+##### v0.0.7 - Jul 2, 2018
++ Google Analytics implemented to collect usage details to enhance the features
++ Input validation added
++ Fixed minor bugs
+
+##### v0.0.6 - Jul 2, 2018
++ Render Ad tag using IAB's Safeframe
+
 ##### v0.0.3 - Jul 2, 2018
 + Detects 'AdBlocker'
 + Detects Online/Offline status
@@ -54,5 +62,12 @@ Always, \A/31<0m3!
 
 ### Feedback
 Hey! I'd like to hear your feedback! send DM/
+
+[!] Take a look on my other extensions
+
+For Chrome: https://chrome.google.com/webstore/search/d09r
+For Firefox: https://addons.mozilla.org/en-US/firefox/user/D09r/
+
+> If you like my apps, please consider buying me a coffee https://buymeacoff.ee/d09r
 
 #d09r
