@@ -1,3 +1,25 @@
+@media screen and (min-width: 768px) {
+  .modal-lg{
+	  left: 42%;
+      width: 800px;
+  }
+
+  .modal-sm{
+	  left: 42%;
+      width:300px;
+  }
+}
+
+#editPlatform table {
+  width: 100%;
+  table-layout: fixed;
+  margin-top: -2px; /* same value as border-spacing */
+}
+
+#editPlatform td {
+  padding: 10px;
+}
+
 #adPrevPlatLink {
 	width: 20em;
 	height: 1.6em;
@@ -5,7 +27,19 @@
 }
 
 #adPrevPlatLink:focus {
-  	width: 40em;
+  	width: 36em;
+}
+
+#extPromo .promodiv {
+	margin-bottom: 12px;
+	margin-left: 6px;
+	margin-right: 6px;
+	margin-top: 6px;
+}
+
+#extPromo .promodivtitle {
+	margin: 6px;
+	font-size: 1.2em;
 }
 
 #isOnline {
@@ -41,7 +75,7 @@ textarea {
 }
 
 textarea:focus {
-  height: 40em;
+  height: 26em;
 }
 
 #html_input {

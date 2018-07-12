@@ -3,7 +3,7 @@
 	"manifest_version": 2,
 	"name": "Ads Preview",
 	"description": "Ads Preview extension for Chrome & Firefox helps to preview multiple creatives (Ads), IAB's Safeframe and trace Ad HTTP headers",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"short_name": "Ads Preview",
     "author": "D09r",
     "homepage_url": "https://chrome.google.com/webstore/search/d09r?_category=extensions",
@@ -26,5 +26,6 @@
 	"browser_action": {
         "default_icon": "icons/ad-16.png",
         "default_title": "Ads Preview and render Ad tag using IAB's Safeframe"
-    }
+    },
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }

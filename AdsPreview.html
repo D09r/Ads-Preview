@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
 	<title>Ads Preview</title>
-	<link href="style.css" rel="stylesheet">
     <link href="lib/bootstrap.min.css" rel="stylesheet">
 	<link href="lib/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
 	<script src="js/crWinClose.js"></script>
 	<script src="js/ads.js" type="text/javascript"></script>
 </head>
@@ -20,25 +20,71 @@
 					</div>
 					<hr>
 					<div>
-						<h4>Platforms</h4>
+						<h4>Platforms&nbsp;&nbsp;<a href="#settingsAdPlatforms" id="settingsPlat" data-toggle="tooltip" data-placement="right" title="Click to open Platforms settings"><img src="icons/settings.svg" /></a></h4>
+						<div>
+<!--							<img src="icons/diff-added.svg" />-->
+						</div>
 						<form id="platform">
 							<div class="radio">
-								<label><input type="radio" name="platforms" value="#" data-id="default" checked> default</label>
+								<label><input type="radio" name="platforms" value="#" data-id="default" checked hidden>Click on settings and create a Platform name &#38; preview link </label>
 							</div>
 					  	</form>
 					</div>
 					<div>
 						<h4>Ad IDs</h4>
-						<textarea id="inputsCr" type="text" required placeholder="Enter the creative IDs (should be separated by line)"></textarea>
+						<textarea id="inputsCr" type="text" required placeholder="Enter the Ad IDs (should be separated by line)"></textarea>
 					</div>
 					<div>
-						<button id="loadCr" class="btn btn-primary btn-medium" type="button">Ads Preview</button>
+						<button id="loadCr" class="btn btn-primary btn-medium" type="button" title="Preview Ads">Preview Ads</button>
 					</div>
 					<div id="totalCr"></div>
           		</div><!--/.well -->
+				<div class="well sidebar-nav">
+					<div>
+						<a href='#extPromo' data-target="#extPromo" data-toggle="modal" style="text-decoration: none"><img src="icons/add_app.png" />&nbsp;&nbsp;More .. </a>
+					</div>
+					<br>
+					<div>
+						<a href='https://chrome.google.com/webstore/detail/ads-preview/moclhmphpefaimgfcdgecdbbhnelafoj/reviews?utm_source=ads-preview&utm_medium=chrome-extension&utm_campaign=extension-review' target="_blank" style="text-decoration: none"><img src="icons/feedback.png" />&nbsp;&nbsp;Feedback </a>
+					</div>
+				</div>
         	</div><!--/span-->
 			<div class="span10">
 				<div class="hero-unit" id="billboard">
+					<div id="safeframe">
+						<table cellspacing="0" border="0" cellpadding="0" style="width:100%;height:auto;table-layout:fixed">
+							<tr>
+								<td style="vertical-align:top;white-space:nowrap;text-align:right;">
+								</td>
+								<td style="width:90%;vertical-align:top;white-space:nowrap;">
+									<h4>SafeFrame</h4>
+									<textarea id="html_input" placeholder="Enter the Ad tag and its width & height to render it!"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td style="width:90%;vertical-align:top;white-space:nowrap;">
+									<span id="label_width" style="font-weight:300">Width:&nbsp;&nbsp;</span><input id="width_input" type="text" style="width:40px;font-size:14px" value="0" />
+									<span id="label_height" style="font-weight:300;">&nbsp;&nbsp;Height:&nbsp;&nbsp;</span><input id="height_input" type="text" style="width:40px;font-size:14px"  value="0" />&nbsp;&nbsp;&nbsp;&nbsp;
+								</td>
+							</tr>
+								<tr>
+									<td></td>
+									<td style="width:90%;vertical-align:top;white-space:nowrap;">
+									<button id="renderAdTag" class="btn btn-primary btn-medium" type="button">Render Ad tag</button>&nbsp;&nbsp;&nbsp;&nbsp;
+									<button id="sfhostnuke" type="button" class="btn btn-dark">Clear</button>
+										</td>
+								</tr>
+						</table>
+						<hr>
+						<div id="err_csp" sytle="display:none;font: sans-serif;font-weight:400"></div>
+						<div style="position:relative;margin:0px;width:100%;right:auto;top:auto;left:auto;margin-left:auto;margin-right:auto;text-align:center;width:100%;">
+							<div style="display:inline-block">
+								<div id="tgtLREC"></div>
+							</div>
+						</div>
+					</div>
+<!--
 					<div class="container1" id="addPlatform">
 						<div class="row">
 							<span style="font-weight: 500">Ad Platform Name &#38; Preview Link</span>
@@ -52,17 +98,47 @@
 							<button id="adPrevLink" class="btn btn-primary btn-medium" type="button">Save</button>
 						</div>
 					</div>
+-->
 				</div>
 			</div>
 		</div>
+		<!-- Modal Promo -->
+		<div class="modal fade modal-lg" id="extPromo" tabindex="-1" role="dialog" aria-labelledby="extPromoLabel" aria-hidden="true" style="display: none;">
+		  <div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			  <div class="modal-header">
+			  </div>
+			  <div class="modal-body">
+				  <table>
+					  <tr>
+						  <td><img src="https://lh3.googleusercontent.com/gfNg9wRAJDljxYV8q4Fw72WUdK0D1SQRtN2HtvdHIMLd1PaCfpVVovT5H-hiM5uT7N6i-U_dsA=w440-h280-e365" /><div class="promodivtitle"><span>Ads Preview</span></div><div class="promodiv"><a href="https://chrome.google.com/webstore/detail/ads-preview/moclhmphpefaimgfcdgecdbbhnelafoj?utm_source=ads-preview&utm_medium=chrome-extension&utm_campaign=extension-promotion" target="_blank">Chrome</a>&nbsp;|&nbsp;<a href="https://addons.mozilla.org/en-US/firefox/addon/ads-preview/?utm_source=ads-preview&utm_medium=chrome-extension&utm_campaign=extension-promotion" target="_blank">Firefox</a></div></td>
+						  <td><img src="https://lh3.googleusercontent.com/tdsH8rox9NosmQwUQM5UExGV7Lh-uLY6YGn1xbYDrvMh0Mvqp3ORFgFhxA-pHy8vFPPDwRM_=w440-h280-e365" /><div class="promodivtitle"><span>Creative Tester</span></div><div class="promodiv"><a href="https://chrome.google.com/webstore/detail/creative-tester-live-http/ibbejlanbkoaepocgcebajilofpnappm?utm_source=ads-preview&utm_medium=chrome-extension&utm_campaign=extension-promotion" target="_blank">Chrome</a></div></td>
+						  <td><img src="https://lh3.googleusercontent.com/09pdOwBrgxa55wQsBq-y9AMITfnXslQrxTMUev7VuesJ3kP2EGk2e11A71l9Ttsm4TtOm_UHkg=w440-h280-e365" /><div class="promodivtitle"><span>Recon</span></div><div class="promodiv"><a href="https://chrome.google.com/webstore/detail/recon-ip-network-malware/lpfpoenklfncdgminmpdoomkbjaiolod?utm_source=ads-preview&utm_medium=chrome-extension&utm_campaign=extension-promotion" target="_blank">Chrome</a>&nbsp;|&nbsp;<a href="https://addons.mozilla.org/en-US/firefox/addon/recon-ip-network-malware-tools/?utm_source=ads-preview&utm_medium=chrome-extension&utm_campaign=extension-promotion" target="_blank">Firefox</a></div></td>
+					  </tr>
+					  <tr>
+						  <td><img src="https://lh3.googleusercontent.com/nEvFlm7W-XrO-A3lOfxpU_5fP1t8pcavW3UXcbZMcjJ3p_XY482Ox64euKuPfAwwPRAxpakfXA=w440-h280-e365" /><div class="promodivtitle"><span>URL &#38; Malware Scanner</span></div><div class="promodiv"><a href="https://chrome.google.com/webstore/detail/url-scanner/ianpniapgjchiheejeipopldaanbjicd?utm_source=ads-preview&utm_medium=chrome-extension&utm_campaign=extension-promotion" target="_blank">Chrome</a>&nbsp;|&nbsp;<a href="https://addons.mozilla.org/en-US/firefox/addon/malware-url-scanner/?utm_source=ads-preview&utm_medium=chrome-extension&utm_campaign=extension-promotion" target="_blank">Firefox</a></div></td>
+						  <td><img src="https://lh3.googleusercontent.com/F00xNRnPSyyygH0jMiVZWDNDtTwZXIPf4lvHc3cOUNXW9PEs0WoEPWyUOZDDEcJtyH5KJ-LhOg=w440-h280-e365" /><div class="promodivtitle"><span>CryptoMining Blocker</span></div><div class="promodiv"><a href="https://chrome.google.com/webstore/detail/cryptomining-blocker/fnmgefajmfpflnopkgeodcbfkgpkbcaa?utm_source=ads-preview&utm_medium=chrome-extension&utm_campaign=extension-promotion" target="_blank">Chrome</a>&nbsp;|&nbsp;<a href="https://addons.mozilla.org/en-US/firefox/addon/cryptomining-blocker/?utm_source=ads-preview&utm_medium=chrome-extension&utm_campaign=extension-promotion" target="_blank">Firefox</a></div></td>
+						  <td><img src="https://lh3.googleusercontent.com/rrx97LH8vZx4QW5B2EIntfGErYsUwYdyskCmEx0TddtmVeR9Xk7ezzdx9YTlRLHrsFoJwilp=w440-h280-e365" /><div class="promodivtitle"><span>Feed Proxy</span></div><div class="promodiv"><a href="https://chrome.google.com/webstore/detail/feed-proxy/ehfljgbbpjgcfondpjcmbfmmpnhchfkg?utm_source=ads-preview&utm_medium=chrome-extension&utm_campaign=extension-promotion" target="_blank">Chrome</a></div></td>
+					  </tr>
+					  <tr>
+						  <td><img src="https://lh3.googleusercontent.com/gU4GORzRGUbq-BQGgrp7vaQBeSVv17iWZf1-t8zEkuTwgwFff0zHtdxtyy7WWTkp33-_jik=w440-h280-e365" /><div class="promodivtitle"><span>NewTab with Flickr Photos</span></div><div class="promodiv"><a href="https://chrome.google.com/webstore/detail/newtab-with-flickr-photos/fgldkaanhphenmkoplibjddpdhidkmem?utm_source=ads-preview&utm_medium=chrome-extension&utm_campaign=extension-promotion" target="_blank">Chrome</a>&nbsp;|&nbsp;<a href="https://addons.mozilla.org/en-US/firefox/addon/newtab-with-flickr-photos/?utm_source=ads-preview&utm_medium=chrome-extension&utm_campaign=extension-promotion" target="_blank">Firefox</a></div></td>
+					  </tr>
+				  </table>
+			  </div>
+			  <div class="modal-footer">
+				<button id="dismissModal" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
 		<hr>
 		<footer>
-			<p class="pull-right" style="color:#afafaf;marign-bottom:6px">Hey! I'd like to hear your <a href="https://chrome.google.com/webstore/detail/ads-preview/moclhmphpefaimgfcdgecdbbhnelafoj/reviews" target="_blank" class="font-italic">feedback!</a> | <span>Do you wanna collaborate? </span><a href="https://github.com/d09r?tab=repositories" target="_blank">Ads Preview v0.0.7</a> | <a href="https://chrome.google.com/webstore/search/d09r?_category=extensions" target="_blank">Chrome Web Store</a> | <a href="https://addons.mozilla.org/en-US/firefox/user/D09r/" target="_blank">Firefox Add-ons</a> | #d09r </p>
+			<p class="pull-right" style="font-size: 1.1em; color:#afafaf;marign-bottom:6px">Hey! I'd like to hear your <a href="https://chrome.google.com/webstore/detail/ads-preview/moclhmphpefaimgfcdgecdbbhnelafoj/reviews?utm_source=ads-preview&utm_medium=chrome-extension&utm_campaign=extension-review" target="_blank" class="font-italic">feedback!</a> | <a href="https://chrome.google.com/webstore/search/d09r?_category=extensions" target="_blank">Chrome Web Store</a> | <a href="https://addons.mozilla.org/en-US/firefox/user/D09r/" target="_blank">Firefox Add-ons</a> | <a id="bmc" href="https://www.buymeacoff.ee/d09r" target="_blank">Buy me a coffee</a> | #d09r </p>
 		</footer>
 	</div>
 	<div id="srcCodeViewerDiv"></div>
 	<!-- Modal srcCode -->
-		<div class="modal fade" id="modalAddPlatform" tabindex="-1" role="dialog" aria-labelledby="modalAddPlatformLabel" aria-hidden="true" style="display: none">
+	<div class="modal fade" id="modalAddPlatform" tabindex="-1" role="dialog" aria-labelledby="modalAddPlatformLabel" aria-hidden="true" style="display: none">
 		  <div class="modal-dialog" role="document">
 			<div class="modal-content">
 			  <div class="modal-header">
@@ -78,11 +154,61 @@
 		  </div>
 		</div>
 	
+	<!-- Modal Settings Platforms -->
+	<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true" style="display: none">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h4 class="modal-title" id="settingsModalLabel">Ad Platform Settings</h4>
+			  </div>
+			  <div class="modal-body">
+				  <div id="addPlatform">
+					  <div>
+						  <input id="adPrevPlatName" type="text" placeholder="Enter the platform name.." required style="width: 20em"><br>
+						  <input id="adPrevPlatLink" type="url" placeholder="Enter the ad preview link.." required>
+					  </div>
+				  </div>
+				  <div id="editPlatform" style="display: none">
+					  <table style="width: 96%; table-layout: fixed;"></table>
+				  </div>
+			  </div>
+			  <div class="modal-footer">
+				  <button id="adPrevLink" class="btn btn-primary btn-medium" type="button">Save</button>
+				  <button id="editPlatformSave" type="button" class="btn btn-primary" style='display: none'>Save</button>
+				  <button id="editPlatformBtn" type="button" class="btn btn-secondary"  style='display: none'>Edit Platforms</button>
+				  <button id="dismissModal" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	
+	<!-- Modal Invalid Input -->
+	<div class="modal fade" id="modalInvalidInput" tabindex="-1" role="dialog" aria-labelledby="modalInvalidInputLabel" aria-hidden="true" style="display: none">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h4 class="modal-title" id="modalInvalidInputLabel">[X] You've entered an invalid input!</h4>
+			  </div>
+			  <div class="modal-body">
+				  <p>Please make sure that entered Ad IDs are valid and should be separated by the line.</p>
+			  </div>
+			  <div class="modal-footer">
+				<button id="dismissModal" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	
 	<div id="runtime"></div>
 	<script src="lib/jquery-3.3.1.min.js"></script>
 	<script src="lib/bootstrap.min.js"></script>
 	<script src="lib/syntaxHighlighter.js"></script>
     <script src="lib/syntaxHighlighter-extra.js"></script>
+<!--	<script type="text/javascript" src="lib/base.js"></script>-->
+<!--
+	<script type="text/javascript" src="lib/host.js"></script>
+	<script type="text/javascript" src="lib/boot.js"></script>
+-->
 	<script src="js/cr.js"></script>
 </body>
 </html>
